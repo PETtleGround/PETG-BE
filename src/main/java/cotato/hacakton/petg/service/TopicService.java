@@ -42,7 +42,7 @@ public class TopicService {
     }
     @Transactional(readOnly = true)
     public List<TopicListResponse> findAllTopics() {
-        return topicRepository.findAll().stream()
+        return topicRepository.findAllDescs().stream()
                 .map(topic -> TopicListResponse.builder()
                         .id(topic.getId())
                         .title(topic.getTitle())
