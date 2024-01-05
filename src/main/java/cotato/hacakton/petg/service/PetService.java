@@ -9,7 +9,6 @@ import cotato.hacakton.petg.exception.ErrorCode;
 import cotato.hacakton.petg.repository.MemberRepository;
 import cotato.hacakton.petg.repository.PetRepository;
 import java.time.LocalDate;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
