@@ -23,7 +23,8 @@ public class SecurityConfig {
 
     private static final String[] WHITE_LIST = {
             "/v1/api/auth/join",
-            "/login"
+            "/login",
+            "/v1/api/topic"
     };
 
     private final JwtUtil jwtUtil;
@@ -48,7 +49,7 @@ public class SecurityConfig {
                 .addFilter(corsFilter)
                 .authorizeHttpRequests(request -> request
                         .requestMatchers(WHITE_LIST).permitAll()
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
                 );
         return http.build();
     }

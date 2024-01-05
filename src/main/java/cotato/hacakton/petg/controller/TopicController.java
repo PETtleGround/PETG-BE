@@ -19,7 +19,7 @@ public class TopicController {
 
     private final TopicService topicService;
 
-    @PostMapping()
+    @PostMapping("/add")
     public ResponseEntity<?> addTopic(@RequestBody TopicAddRequest addRequest) {
         Long topicId = topicService.addTopic(addRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(topicId);
