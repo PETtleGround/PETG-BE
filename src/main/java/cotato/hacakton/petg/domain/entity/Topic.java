@@ -24,6 +24,9 @@ public class Topic extends BaseTimeEntity {
     @Column(name = "topic_title")
     private String title;
 
+    @Column(name = "topic_photo_url")
+    private String url;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
