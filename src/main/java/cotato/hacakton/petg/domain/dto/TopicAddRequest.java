@@ -7,4 +7,5 @@ public class TopicAddRequest {
 
     private String title;
     private Long memberId;
+    private String url;
 }
