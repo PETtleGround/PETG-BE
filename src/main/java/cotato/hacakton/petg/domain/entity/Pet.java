@@ -14,9 +14,12 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import java.time.LocalDate;
 import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Pet extends BaseTimeEntity {
 
@@ -41,4 +44,13 @@ public class Pet extends BaseTimeEntity {
     @OneToOne(fetch = LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @Builder
+    public Pet(String name, PetCategory category, PetType type, LocalDate birthDay, Member member){
+        this.name = name;
+        this.category = category;
+        this.type = type;
+        this.birthday = birthDay;
+        this.member = member;
+    }
 }
