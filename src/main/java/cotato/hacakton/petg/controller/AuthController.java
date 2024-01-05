@@ -19,7 +19,6 @@ public class AuthController {
 
     private final AuthService authService;
 
-
     @PostMapping("/join")
     public ResponseEntity<?> createMember(@RequestBody JoinRequest request){
         authService.createMember(request);
