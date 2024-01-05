@@ -10,9 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Topic extends BaseTimeEntity {
 
@@ -24,7 +27,16 @@ public class Topic extends BaseTimeEntity {
     @Column(name = "topic_title")
     private String title;
 
+    @Column(name = "topic_photo_url")
+    private String url;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @Builder
+    public Topic(String title, Member member){
+        this.title = title;
+        this.member = member;
+    }
 }
