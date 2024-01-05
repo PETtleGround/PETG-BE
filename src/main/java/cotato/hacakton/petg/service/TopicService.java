@@ -10,13 +10,12 @@ import cotato.hacakton.petg.repository.LikeRepository;
 import cotato.hacakton.petg.repository.MemberRepository;
 import cotato.hacakton.petg.repository.PostRepository;
 import cotato.hacakton.petg.repository.TopicRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor

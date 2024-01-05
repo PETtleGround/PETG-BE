@@ -16,6 +16,11 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    public Member findMemberById(Long memberId){
+        return memberRepository.findById(memberId)
+                .orElseThrow(()-> new AppException(ErrorCode.MEMBER_NOT_FOUND));
+    }
+
     public MemberInfoResponse getMemberInfo(String email) {
         Member findMember = memberRepository.findByEmail(email)
                 .orElseThrow(() -> new AppException(ErrorCode.MEMBER_NOT_FOUND));
